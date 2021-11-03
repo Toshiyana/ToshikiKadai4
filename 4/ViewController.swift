@@ -8,12 +8,14 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet private weak var numLabel: UILabel!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    @IBAction private func countUpButtonPressed(_ sender: UIButton) {
+        let countedUpNumber = Int(numLabel.text!)! + 1
+        numLabel.text = String(countedUpNumber)
     }
 
-
+    @IBAction private func clearButtonPressed(_ sender: UIButton) {
+        numLabel.text = "0"
+    }
 }
-
